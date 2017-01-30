@@ -12,16 +12,17 @@ public class WithdrawalMeth {
         System.out.println("Your current balance is " + balance + "$");
         Scanner scan = new Scanner(System.in);
         double output = scan.nextDouble();
-        withdrawalMethod.commision(balance,output);
+        withdrawalMethod.commision(balance, output);
 
     }
-    public void commision (double a, double b){
-        double cmmsn = (b/100)*5;
+
+    public void commision(double a, double b) {
+        double cmmsn = (b / 100) * 5;
         a = a - b - cmmsn;
-        if (a<10) {
+        if (a < 10) {
             System.out.println("Not enough money!");
         }
-        if (a>=10){
+        if (a >= 10) {
             System.out.println("OK! Withdrawal: " + b + "; comission: " + cmmsn + " Your current balance is " + a + "$");
         }
     }
