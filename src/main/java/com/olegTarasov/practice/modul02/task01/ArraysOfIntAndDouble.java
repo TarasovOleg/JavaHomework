@@ -48,9 +48,9 @@ public class ArraysOfIntAndDouble {
 
     public void maxPosit(int arr[]) {
         Arrays.sort(arr);
-        int a = arr[arr.length - 1];
-        if (a >= 0) {
-            System.out.println("Maximal positive value is " + a);
+        int positive = arr[arr.length - 1];
+        if (positive >= 0) {
+            System.out.println("Maximal positive value is " + positive);
         } else {
             System.out.println("All elements is below zero.");
         }
@@ -71,8 +71,8 @@ public class ArraysOfIntAndDouble {
 
     public void secLarge(int arr[]) {
         Arrays.sort(arr);
-        int a = (arr[arr.length - 2]);
-        System.out.println("Second largest element is " + a);
+        int second = (arr[arr.length - 2]);
+        System.out.println("Second largest element is " + second);
     }
 
     public void sum(double[] arr) {
@@ -95,9 +95,9 @@ public class ArraysOfIntAndDouble {
 
     public void maxPosit(double[] arr) {
         Arrays.sort(arr);
-        double a = arr[arr.length - 1];
-        if (a >= 0) {
-            System.out.println("Maximal positive value of double array is " + a);
+        double positive = arr[arr.length - 1];
+        if (positive >= 0) {
+            System.out.println("Maximal positive value of double array is " + positive);
         } else {
             System.out.println("All elements is below zero.");
         }
@@ -118,7 +118,7 @@ public class ArraysOfIntAndDouble {
 
     public void secLarge(double[] arr) {
         Arrays.sort(arr);
-        double a = (arr[arr.length - 2]);
-        System.out.println("Second largest element of double array is " + a);
+        double second = (arr[arr.length - 2]);
+        System.out.println("Second largest element of double array is " + second);
     }
 }
