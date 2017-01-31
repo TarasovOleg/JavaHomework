@@ -19,10 +19,10 @@ public class WithdrawalMeth {
     public void withdrawalWithCommission(double a, double b) {
         double commission = (b / 100) * 5;
         double resultOfCalculation = a - b - commission;
-        if (a < 0) {
+        if (resultOfCalculation < 0) {
             System.out.println("Not enough money!");
         }
-        if (a >= 0) {
+        if (resultOfCalculation >= 0) {
             System.out.println("OK! Withdrawal: " + b + "; comission: " + commission + " Your current balance is " + resultOfCalculation + "$");
         }
     }
