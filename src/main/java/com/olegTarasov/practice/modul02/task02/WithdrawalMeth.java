@@ -12,18 +12,18 @@ public class WithdrawalMeth {
         System.out.println("Your current balance is " + balance + "$. \nEnter size of withdrawal:");
         Scanner scan = new Scanner(System.in);
         double output = scan.nextDouble();
-        withdrawalMethod.commision(balance, output);
+        withdrawalMethod.withdrawalWithCommission(balance, output);
 
     }
 
-    public void commision(double a, double b) {
-        double cmmsn = (b / 100) * 5;
-        a = a - b - cmmsn;
+    public void withdrawalWithCommission(double a, double b) {
+        double commission = (b / 100) * 5;
+        double resultOfCalculation = a - b - commission;
         if (a < 0) {
             System.out.println("Not enough money!");
         }
         if (a >= 0) {
-            System.out.println("OK! Withdrawal: " + b + "; comission: " + cmmsn + " Your current balance is " + a + "$");
+            System.out.println("OK! Withdrawal: " + b + "; comission: " + commission + " Your current balance is " + resultOfCalculation + "$");
         }
     }
 }
