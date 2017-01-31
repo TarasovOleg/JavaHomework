@@ -9,7 +9,7 @@ public class WithdrawalMeth {
     public static void main(String[] args) {
         WithdrawalMeth withdrawalMethod = new WithdrawalMeth();
         double balance = 7000;
-        System.out.println("Your current balance is " + balance + "$");
+        System.out.println("Your current balance is " + balance + "$. \nEnter size of withdrawal:");
         Scanner scan = new Scanner(System.in);
         double output = scan.nextDouble();
         withdrawalMethod.commision(balance, output);
@@ -19,10 +19,10 @@ public class WithdrawalMeth {
     public void commision(double a, double b) {
         double cmmsn = (b / 100) * 5;
         a = a - b - cmmsn;
-        if (a < 10) {
+        if (a < 0) {
             System.out.println("Not enough money!");
         }
-        if (a >= 10) {
+        if (a >= 0) {
             System.out.println("OK! Withdrawal: " + b + "; comission: " + cmmsn + " Your current balance is " + a + "$");
         }
     }
