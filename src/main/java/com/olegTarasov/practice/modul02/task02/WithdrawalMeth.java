@@ -14,6 +14,7 @@ public class WithdrawalMeth {
         Scanner scan = new Scanner(System.in);
         double output = scan.nextDouble();
         withdrawalMethod.withdrawalWithCommission(balance, output);
+        System.out.println(balance);
 
     }
 

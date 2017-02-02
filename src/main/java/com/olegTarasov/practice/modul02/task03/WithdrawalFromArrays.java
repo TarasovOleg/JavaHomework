@@ -24,13 +24,13 @@ public class WithdrawalFromArrays {
             double ownerBalance = b[a];
             System.out.println("ID #" + a + ". " + ownerName + ", your balance is: " + ownerBalance + ".\n" +
                     "Enter 1 for WITHDRAWAL, 2 for END.");
-            Scanner yesOrNo = new Scanner(System.in);
-            int check = yesOrNo.nextInt();
+            Scanner scanner = new Scanner(System.in);
+            int check = scanner.nextInt();
 
             if (check == 1) {
                 System.out.println("Please, enter size of withdrawal");
-                Scanner cash = new Scanner(System.in);
-                double cashValue = cash.nextDouble();
+
+                double cashValue = scanner.nextDouble();
                 withdrawal(a, b, c, cashValue);
             } else if (check == 2) {
                 System.out.println("Good bye!");

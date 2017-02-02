@@ -7,18 +7,18 @@ public class Adder extends Arithmetic {
     public static void main(String[] args) {
         Arithmetic arithmetic = new Arithmetic();
         Adder adder = new Adder();
-        Integer a = 0;
-        Integer b = 0;
-        System.out.println(arithmetic.add(a, b));
-        System.out.println(a + " " + b);
-        System.out.println(adder.check(a, b));
+        Integer first = 0;
+        Integer second = 0;
+        System.out.println(arithmetic.add(first, second));
+        System.out.println(first + " " + second);
+        System.out.println(adder.check(first, second));
 
     }
 
     public boolean check(Integer a, Integer b) {
-        if (a >= b) {
-            return true;
+        if (a < b) {
+            return false;
         }
-        return false;
+        return true;
     }
 }

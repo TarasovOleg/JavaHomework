@@ -29,19 +29,17 @@ public class FundTheBalance extends WithdrawalFromArrays {
             double ownerBalance = balances[numId];
             System.out.println("ID #" + numId + ". " + ownerName + ", your balance is: " + ownerBalance + ".\n" +
                     "Enter 1 for WITHDRAWAL, 2 for FUND or 3 for END.");
-            Scanner yesOrNo = new Scanner(System.in);
-            int check = yesOrNo.nextInt();
+            Scanner scanner = new Scanner(System.in);
+            int check = scanner.nextInt();
             switch (check) {
                 case 1:
                     System.out.println("Please, enter size of withdrawal");
-                    Scanner cashWthd = new Scanner(System.in);
-                    double wthdValue = cashWthd.nextDouble();
+                    double wthdValue = scanner.nextDouble();
                     withdrawalFromArrays.withdrawal(numId, balances, ownerNames, wthdValue);
                     break;
                 case 2:
                     System.out.println("Please, enter size of fund");
-                    Scanner cashFnd = new Scanner(System.in);
-                    double fndValue = cashFnd.nextDouble();
+                    double fndValue = scanner.nextDouble();
                     fund(numId, balances, ownerNames, fndValue);
                     break;
                 case 3:
