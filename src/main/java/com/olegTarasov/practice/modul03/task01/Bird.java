@@ -5,6 +5,9 @@ package com.olegTarasov.practice.modul03.task01;
  */
 public class Bird {
 
+    public final String SONG = String.format(" I am walking%n I am flying%n I am singing%n I am Bird!");
+
+
 
     public static void main(String[] args) {
         Bird bird = new Bird();
@@ -13,9 +16,8 @@ public class Bird {
 
     }
 
-    public void Sing(String sing) {
-        String song = String.format(" I am walking%n I am flying%n I am singing%n I am Bird!");
-        System.out.println(song);
+    public void Sing(String song) {
+        System.out.println(SONG);
     }
 
 }
