@@ -5,7 +5,7 @@ package com.olegTarasov.practice.modul03.task01;
  */
 public class Bird {
 
-    public final String SONG = String.format(" I am walking%n I am flying%n I am singing%n I am Bird!");
+    public static final String SONG = String.format(" I am walking%n I am flying%n I am singing%n I am Bird!");
 
 
 
