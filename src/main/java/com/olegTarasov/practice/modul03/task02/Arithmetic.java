@@ -7,6 +7,24 @@ import java.util.Scanner;
  */
 class Arithmetic {
 
+    private Integer first = 0;
+    private Integer second = 0;
+
+    public Integer getFirst() {
+        return first;
+    }
+
+    public void setFirst(Integer first) {
+        this.first = first;
+    }
+
+    public Integer getSecond() {
+        return second;
+    }
+
+    public void setSecond(Integer second) {
+        this.second = second;
+    }
 
     public int add(Integer a, Integer b) {
         System.out.println("Enter two numbers: ");
@@ -21,10 +39,9 @@ class Arithmetic {
 
     public static void main(String[] args) {
         Arithmetic arithmetic = new Arithmetic();
-        Integer a = 0;
-        Integer b = 0;
-        System.out.println(arithmetic.add(a, b));
-        System.out.println(a + " " + b);
+
+        //System.out.println(arithmetic.add(a, b));
+        //System.out.println(a + " " + b);
 
     }
 }
