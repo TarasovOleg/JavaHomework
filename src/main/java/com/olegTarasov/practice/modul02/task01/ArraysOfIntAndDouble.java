@@ -12,12 +12,13 @@ public class ArraysOfIntAndDouble {
         double[] arrayDouble = {5, 9, 10, 16, 10, 12, 21, 17, 12, 7};
         System.out.println(" ");
 
+
         arraysOfIntAndDouble.sum(arrayInt);
         arraysOfIntAndDouble.max(arrayInt);
         arraysOfIntAndDouble.min(arrayInt);
         arraysOfIntAndDouble.maxPosit(arrayInt);
-        Arrays.toString(arrayInt);
-        System.out.println(arraysOfIntAndDouble.mult(arrayInt));
+        System.out.println(Arrays.toString(arraysOfIntAndDouble.modul(arrayInt)));
+        arraysOfIntAndDouble.mult(arrayInt);
         arraysOfIntAndDouble.secLarge(arrayInt);
 
         System.out.println(" ");
@@ -25,7 +26,7 @@ public class ArraysOfIntAndDouble {
         arraysOfIntAndDouble.max(arrayDouble);
         arraysOfIntAndDouble.min(arrayDouble);
         arraysOfIntAndDouble.maxPosit(arrayDouble);
-        arraysOfIntAndDouble.modul(arrayDouble);
+        System.out.println(Arrays.toString(arraysOfIntAndDouble.modul(arrayDouble)));
         arraysOfIntAndDouble.mult(arrayDouble);
         arraysOfIntAndDouble.secLarge(arrayDouble);
     }

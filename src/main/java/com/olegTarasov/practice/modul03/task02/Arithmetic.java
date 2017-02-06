@@ -7,8 +7,8 @@ import java.util.Scanner;
  */
 class Arithmetic {
 
-    private Integer first = 0;
-    private Integer second = 0;
+    private static Integer first = 0;
+    private static Integer second = 0;
 
     public Integer getFirst() {
         return first;
@@ -26,22 +26,24 @@ class Arithmetic {
         this.second = second;
     }
 
-    public int add(Integer a, Integer b) {
+    public int add(Integer alfa, Integer beta) {
+        Arithmetic arithmetic = new Arithmetic();
         System.out.println("Enter two numbers: ");
         Scanner scan1 = new Scanner(System.in);
         Scanner scan2 = new Scanner(System.in);
-        a = scan1.nextInt();
-        b = scan2.nextInt();
+        alfa = scan1.nextInt();
+        arithmetic.setFirst(alfa);
+        beta = scan2.nextInt();
+        arithmetic.setSecond(beta);
 
-        Integer c = a + b;
+        int c = alfa + beta;
         return c;
     }
 
     public static void main(String[] args) {
         Arithmetic arithmetic = new Arithmetic();
-
-        //System.out.println(arithmetic.add(a, b));
-        //System.out.println(a + " " + b);
+        System.out.println(arithmetic.add(first, second));
+        System.out.println(first + " " + second);
 
     }
 }
