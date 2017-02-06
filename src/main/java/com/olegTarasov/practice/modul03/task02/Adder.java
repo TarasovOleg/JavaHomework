@@ -10,13 +10,14 @@ public class Adder extends Arithmetic {
         Integer first = arithmetic.getFirst();
         Integer second = arithmetic.getSecond();
         System.out.println(arithmetic.add(first, second));
-        System.out.println(first + " " + second);
+        System.out.println(arithmetic.getFirst() + " " + arithmetic.getSecond());
         System.out.println(adder.check(first, second));
 
     }
 
     public boolean check(Integer a, Integer b) {
-        if (a < b) {
+        Arithmetic arithmetic = new Arithmetic();
+        if (arithmetic.getFirst() < arithmetic.getSecond()) {
             return false;
         }
         return true;
