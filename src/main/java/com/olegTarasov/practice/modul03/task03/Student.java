@@ -7,7 +7,7 @@ public class Student {
     String firstName;
     String secondName;
     int groupe;
-    Course [] coursesTaken;
+    Course[] coursesTaken;
     int age;
 
     public String getFirstName() {

@@ -76,7 +76,6 @@ public class User {
     }
 
 
-
     void paySalary(Scanner scanner) {
         User user = new User();
         System.out.println("Enter User's salary: ");
@@ -103,7 +102,7 @@ public class User {
             System.out.println("Not enough money!");
         } else {
             user.setBalance(result);
-            System.out.println("You have withdraw " + withdraw + user.getCurrency() + ". Commission is " + commission + user.getCurrency()+ ". Your current balance is " + balance + user.getCurrency());
+            System.out.println("You have withdraw " + withdraw + user.getCurrency() + ". Commission is " + commission + user.getCurrency() + ". Your current balance is " + balance + user.getCurrency());
         }
 
     }
@@ -125,10 +124,9 @@ public class User {
             System.out.println("How long are you working in the " + companyName + "?");
             int startOfWorking = user.getMonthsOfEmloyment();
             int workingTime = scanner.nextInt();
-            user.setMonthsOfEmloyment(startOfWorking+workingTime);
+            user.setMonthsOfEmloyment(startOfWorking + workingTime);
             System.out.println(user.getMonthsOfEmloyment() + " month's");
-        }
-        else {
+        } else {
             user.companyNameLength(scanner);
             user.monthIncreaser(scanner);
         }
