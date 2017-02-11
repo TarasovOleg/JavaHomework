@@ -4,11 +4,25 @@ package com.olegTarasov.practice.modul03.task03;
  * Created by Олег on 06.02.2017.
  */
 public class Student {
-    String firstName;
-    String secondName;
-    int groupe;
-    Course[] coursesTaken;
-    int age;
+    private String firstName;
+    private String secondName;
+    private int groupe;
+    private Course[] coursesTaken;
+    private int age;
+
+    public Student(String firstName, String secondName, int groupe) {
+        this.firstName = firstName;
+        this.secondName = secondName;
+        this.groupe = groupe;
+    }
+
+    public Student(String secondName, Course[] coursesTaken) {
+        this.secondName = secondName;
+        this.coursesTaken = coursesTaken;
+    }
+
+    public Student() {
+    }
 
     public String getFirstName() {
         return firstName;
@@ -50,15 +64,5 @@ public class Student {
         this.age = age;
     }
 
-    public Student(String firstName, String secondName, int groupe) {
-        this.firstName = firstName;
-        this.secondName = secondName;
-        this.groupe = groupe;
-    }
-
-    public Student(String secondName, Course[] coursesTaken) {
-        this.secondName = secondName;
-        this.coursesTaken = coursesTaken;
-    }
 
 }

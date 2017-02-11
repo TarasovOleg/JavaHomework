@@ -4,9 +4,39 @@ package com.olegTarasov.practice.modul03.task03;
  * Created by Олег on 06.02.2017.
  */
 public class CollegeStudent extends Student {
-    String collegeName;
-    int rating;
-    long id;
+    private String collegeName;
+    private int rating;
+    private long id;
+
+    public CollegeStudent(String firstName, String secondName, int groupe, Course[] coursesTaken, int age, String collegeName, int rating, long id) {
+        super(firstName, secondName, groupe);
+        this.collegeName = collegeName;
+        this.rating = rating;
+        this.id = id;
+        this.setFirstName(firstName);
+        this.setSecondName(secondName);
+        this.setGroupe(groupe);
+        this.setCoursesTaken(coursesTaken);
+        this.setAge(age);
+    }
+
+    public CollegeStudent(String collegeName, int rating, long id) {
+        this.collegeName = collegeName;
+        this.rating = rating;
+        this.id = id;
+    }
+
+    public CollegeStudent(String firstName, String secondName, int groupe) {
+
+        super(firstName, secondName, groupe);
+    }
+
+    public CollegeStudent(String secondName, Course[] coursesTaken) {
+        super(secondName, coursesTaken);
+    }
+
+    public CollegeStudent() {
+    }
 
     public String getCollegeName() {
         return collegeName;
@@ -32,23 +62,5 @@ public class CollegeStudent extends Student {
         this.id = id;
     }
 
-    public CollegeStudent(String firstName, String secondName, int groupe) {
-        super(firstName, secondName, groupe);
-    }
 
-    public CollegeStudent(String secondName, Course[] coursesTaken) {
-        super(secondName, coursesTaken);
-    }
-
-    public CollegeStudent(String firstName, String secondName, int groupe, Course[] coursesTaken, int age, String collegeName, int rating, long id) {
-        super(firstName, secondName, groupe);
-        this.collegeName = collegeName;
-        this.rating = rating;
-        this.id = id;
-        this.firstName = firstName;
-        this.secondName = secondName;
-        this.groupe = groupe;
-        this.coursesTaken = coursesTaken;
-        this.age = age;
-    }
 }
