@@ -6,16 +6,15 @@ import java.util.Scanner;
  * Created by Олег on 07.02.2017.
  */
 public class User {
-    private static String name = "Oleg";
-    private static int balance = 0;
-    private static int monthsOfEmloyment = 0;
-    private static String companyName;
-    private static int salary = 0;
-    private static String currency = "$";
+    private String name;
+    private int balance;
+    private int monthsOfEmloyment;
+    private String companyName;
+    private int salary;
+    private String currency;
+    private static final int BELOWTHOUSAND = 5;
+    private static final int OWERTHOUSAND = 10;
 
-
-    public User() {
-    }
 
     public User(String name, int balance, int monthsOfEmloyment, String companyName, int salary, String currency) {
         this.name = name;
@@ -76,59 +75,41 @@ public class User {
     }
 
 
-    void paySalary(Scanner scanner) {
-        User user = new User();
-        System.out.println("Enter User's salary: ");
-        int salary = scanner.nextInt();
-        user.setSalary(salary);
-        user.setBalance(getBalance() + getSalary());
-        System.out.println("Users salary is " + user.getSalary());
+    void paySalary() {
+        this.balance += salary;
+        System.out.println("Users salary is " + this.salary);
     }
 
-    void withdrawal(Scanner scanner) {
-        User user = new User();
-        System.out.println("Enter withdrawal: ");
-        int withdraw = scanner.nextInt();
+    void withdrawal(int summ) {
         int commission = 0;
         int result = 0;
-        if (withdraw < 1000 && withdraw > 0) {
-            commission = (withdraw / 100) * 5;
-            result = user.getBalance() - commission - withdraw;
-        } else if (withdraw > 1000) {
-            commission = (withdraw / 100) * 10;
-            result = user.getBalance() - commission - withdraw;
+        if (summ < 1000 && summ > 0) {
+            commission = (summ / 100) * BELOWTHOUSAND;
+            result = balance - commission - summ;
+        } else if (summ > 1000) {
+            commission = (summ / 100) * OWERTHOUSAND;
+            result = balance - commission - summ;
         }
         if (result <= 0) {
             System.out.println("Not enough money!");
         } else {
-            user.setBalance(result);
-            System.out.println("You have withdraw " + withdraw + user.getCurrency() + ". Commission is " + commission + user.getCurrency() + ". Your current balance is " + balance + user.getCurrency());
+            balance = result;
+            System.out.println("You have withdraw " + summ + currency + ". Commission is " + commission + currency + ". Your current balance is " + balance + currency);
         }
 
     }
 
-    void companyNameLength(Scanner scanner) {
-        User user = new User();
-        System.out.println("Please enter name of the company you are working in: ");
-        user.setCompanyName(scanner.next());
+    void companyNameLength() {
         int lengthOfName = 0;
-        for (int i = 0; i < user.getCompanyName().toCharArray().length; i++) {
+        for (int i = 0; i < companyName.toCharArray().length; i++) {
             lengthOfName++;
         }
-        System.out.println(lengthOfName);
+        System.out.println("Name of the company you are working in contains " + lengthOfName + " chars");
     }
 
-    void monthIncreaser(Scanner scanner) {
-        User user = new User();
-        if (companyName != null) {
-            System.out.println("How long are you working in the " + companyName + "?");
-            int startOfWorking = user.getMonthsOfEmloyment();
-            int workingTime = scanner.nextInt();
-            user.setMonthsOfEmloyment(startOfWorking + workingTime);
-            System.out.println(user.getMonthsOfEmloyment() + " month's");
-        } else {
-            user.companyNameLength(scanner);
-            user.monthIncreaser(scanner);
-        }
+    void monthIncreaser(int addMonth) {
+        monthsOfEmloyment += addMonth;
+        System.out.println("You are working in the " + companyName + " " + monthsOfEmloyment + " month's");
+
     }
 }

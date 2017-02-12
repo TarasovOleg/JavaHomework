@@ -7,11 +7,15 @@ import java.util.Scanner;
  */
 public class UserMain {
     public static void main(String[] args) {
-        User user = new User();
+        User user = new User("Ivan", 5000, 3, "Dira", 2200, "GRN");
         Scanner scanner = new Scanner(System.in);
-        user.paySalary(scanner);
-        user.withdrawal(scanner);
-        user.companyNameLength(scanner);
-        user.monthIncreaser(scanner);
+        user.paySalary();
+        System.out.print("Enter withdrawal: ");
+        int summ = scanner.nextInt();
+        user.withdrawal(summ);
+        user.companyNameLength();
+        System.out.print("How long are you working here? ");
+        int addMonth = scanner.nextInt();
+        user.monthIncreaser(addMonth);
     }
 }

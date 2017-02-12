@@ -10,6 +10,14 @@ public class Student {
     private Course[] coursesTaken;
     private int age;
 
+    public Student(String firstName, String secondName, int groupe, Course[] coursesTaken, int age) {
+        this.firstName = firstName;
+        this.secondName = secondName;
+        this.groupe = groupe;
+        this.coursesTaken = coursesTaken;
+        this.age = age;
+    }
+
     public Student(String firstName, String secondName, int groupe) {
         this.firstName = firstName;
         this.secondName = secondName;
