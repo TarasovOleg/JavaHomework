@@ -1,4 +1,6 @@
-package com.olegTarasov.practice.modul04.task01;
+package com.olegTarasov.practice.modul04.task05;
+
+import com.olegTarasov.practice.modul04.task04.User;
 
 /**
  * Created by Олег on 12.02.2017.

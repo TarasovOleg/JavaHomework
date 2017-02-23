@@ -1,9 +1,11 @@
 package com.olegTarasov.practice.modul04.task01;
 
+import com.olegTarasov.practice.modul04.task02.Currency;
+
 /**
  * Created by Олег on 11.02.2017.
  */
-abstract class Bank {
+public abstract class Bank {
     private long id;
     private String bankCountry;
     private Currency currency;

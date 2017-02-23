@@ -1,4 +1,4 @@
-package com.olegTarasov.practice.modul04.task01;
+package com.olegTarasov.practice.modul04.task02;
 
 /**
  * Created by Олег on 12.02.2017.

@@ -1,4 +1,6 @@
-package com.olegTarasov.practice.modul04.task01;
+package com.olegTarasov.practice.modul04.task04;
+
+import com.olegTarasov.practice.modul04.task01.Bank;
 
 /**
  * Created by Олег on 12.02.2017.
