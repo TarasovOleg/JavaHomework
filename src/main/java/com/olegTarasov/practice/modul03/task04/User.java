@@ -100,11 +100,7 @@ public class User {
     }
 
     void companyNameLength() {
-        int lengthOfName = 0;
-        for (int i = 0; i < companyName.toCharArray().length; i++) {
-            lengthOfName++;
-        }
-        System.out.println("Name of the company you are working in contains " + lengthOfName + " chars");
+        System.out.println("Name of the company you are working in contains " + companyName.length() + " chars");
     }
 
     void monthIncreaser(int addMonth) {
