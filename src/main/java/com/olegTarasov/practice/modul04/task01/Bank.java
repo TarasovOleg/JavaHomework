@@ -24,8 +24,8 @@ public abstract class Bank {
         this.totalCapital = totalCapital;
     }
 
-    /*public Bank() {
-    }*/
+    public Bank() {
+    }
 
     public long getId() {
         return id;
@@ -91,5 +91,9 @@ public abstract class Bank {
 
     public abstract int getCommission(int summ);
 
-    public abstract double moneyPaidMonthlyForSalary();
+    public double moneyPaidMonthlyForSalary() {
+        return numberOfEmployees * avrSalaryOfEmployee;
+    }
+
+    ;
 }

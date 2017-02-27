@@ -5,7 +5,7 @@ import com.olegTarasov.practice.modul04.task01.Bank;
 /**
  * Created by Олег on 12.02.2017.
  */
-public class User {
+public class BankUser {
     private long id;
     private String name;
     private double balance;
@@ -14,7 +14,7 @@ public class User {
     private int salary;
     private Bank bank;
 
-    public User(long id, String name, double balance, int monthsOfEmployment, String companyName, int salary, Bank bank) {
+    public BankUser(long id, String name, double balance, int monthsOfEmployment, String companyName, int salary, Bank bank) {
         this.id = id;
         this.name = name;
         this.balance = balance;
@@ -24,7 +24,7 @@ public class User {
         this.bank = bank;
     }
 
-    public User() {
+    public BankUser() {
     }
 
     public long getId() {
@@ -85,7 +85,7 @@ public class User {
 
     @Override
     public String toString() {
-        return "User{" +
+        return "BankUser{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", balance=" + balance +

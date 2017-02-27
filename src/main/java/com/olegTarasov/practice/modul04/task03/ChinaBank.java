@@ -6,7 +6,18 @@ import com.olegTarasov.practice.modul04.task02.Currency;
 /**
  * Created by Олег on 23.02.2017.
  */
-public class ChinaBank extends Bank{
+public class ChinaBank extends Bank {
+    protected final int FIRSTLIMITOFWITHDRAWAL = 100;
+    protected final int SECONDLIMITOFWITHDRAWAL = 150;
+    protected final int FIRSTLIMITOFFUND = 5000;
+    protected final int SECONDLIMITOFFUND = 10000;
+    protected final int FIRSTMONTHLYRATE = 0;
+    protected final int SECONDMOTHLYRATE = 1;
+    protected final int FIRSTCOMISSION = 3;
+    protected final int SECONDCOMISSION = 5;
+    protected final int THIRDCOMISSION = 10;
+    protected final int FOURTHCOMISSION = 11;
+
     public ChinaBank(long id, String bankCountry, Currency currency, int numberOfEmployees, double avrSalaryOfEmployee, long rating, long totalCapital) {
         super(id, bankCountry, currency, numberOfEmployees, avrSalaryOfEmployee, rating, totalCapital);
     }
@@ -21,9 +32,9 @@ public class ChinaBank extends Bank{
     public int getLimitOfWithdrawal() {
         int limitOfWithdrawal;
         if (getCurrency() == Currency.USD) {
-            limitOfWithdrawal = 100;
+            limitOfWithdrawal = FIRSTLIMITOFWITHDRAWAL;
         } else {
-            limitOfWithdrawal = 150;
+            limitOfWithdrawal = SECONDLIMITOFWITHDRAWAL;
         }
         return limitOfWithdrawal;
     }
@@ -31,9 +42,9 @@ public class ChinaBank extends Bank{
     public int getLimitOfFunding() {
         int limitOfFunding;
         if (getCurrency() == Currency.EUR) {
-            limitOfFunding = 5000;
+            limitOfFunding = FIRSTLIMITOFFUND;
         } else {
-            limitOfFunding = 10000;
+            limitOfFunding = SECONDLIMITOFFUND;
         }
         return limitOfFunding;
     }
@@ -42,9 +53,9 @@ public class ChinaBank extends Bank{
         int monthlyRate = 0;
         switch (getCurrency()) {
             case EUR:
-                monthlyRate = 0;
+                monthlyRate = FIRSTMONTHLYRATE;
             case USD:
-                monthlyRate = 1;
+                monthlyRate = SECONDMOTHLYRATE;
         }
         return monthlyRate;
     }
@@ -52,18 +63,18 @@ public class ChinaBank extends Bank{
     public int getCommission(int summ) {
         int commision;
         if ((getCurrency() == Currency.USD) && (summ <= 1000)) {
-            commision = 3;
+            commision = FIRSTCOMISSION;
         } else if ((getCurrency() == Currency.USD) && (summ > 1000)) {
-            commision = 5;
+            commision = SECONDCOMISSION;
         } else if ((getCurrency() == Currency.EUR) && (summ <= 1000)) {
-            commision = 10;
+            commision = THIRDCOMISSION;
         } else {
-            commision = 11;
+            commision = FOURTHCOMISSION;
         }
         return commision;
     }
 
     public double moneyPaidMonthlyForSalary() {
-        return getNumberOfEmployees()*getAvrSalaryOfEmployee();
+        return getNumberOfEmployees() * getAvrSalaryOfEmployee();
     }
 }

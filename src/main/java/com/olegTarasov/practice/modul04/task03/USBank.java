@@ -7,6 +7,17 @@ import com.olegTarasov.practice.modul04.task02.Currency;
  * Created by Олег on 23.02.2017.
  */
 public class USBank extends Bank {
+    protected final int FIRSTLIMITOFWITHDRAWAL = 1000;
+    protected final int SECONDLIMITOFWITHDRAWAL = 1200;
+    protected final int FIRSTLIMITOFFUND = 10000;
+    protected final int SECONDLIMITOFFUND = Integer.MAX_VALUE;
+    protected final int FIRSTMONTHLYRATE = 2;
+    protected final int SECONDMOTHLYRATE = 1;
+    protected final int FIRSTCOMISSION = 5;
+    protected final int SECONDCOMISSION = 7;
+    protected final int THIRDCOMISSION = 6;
+    protected final int FOURTHCOMISSION = 8;
+
     public USBank(long id, String bankCountry, Currency currency, int numberOfEmployees, double avrSalaryOfEmployee, long rating, long totalCapital) {
         super(id, bankCountry, currency, numberOfEmployees, avrSalaryOfEmployee, rating, totalCapital);
     }
@@ -21,9 +32,9 @@ public class USBank extends Bank {
     public int getLimitOfWithdrawal() {
         int limitOfWithdrawal;
         if (getCurrency() == Currency.USD) {
-            limitOfWithdrawal = 1000;
+            limitOfWithdrawal = FIRSTLIMITOFWITHDRAWAL;
         } else {
-            limitOfWithdrawal = 1200;
+            limitOfWithdrawal = SECONDLIMITOFWITHDRAWAL;
         }
         return limitOfWithdrawal;
     }
@@ -31,9 +42,9 @@ public class USBank extends Bank {
     public int getLimitOfFunding() {
         int limitOfFunding;
         if (getCurrency() == Currency.EUR) {
-            limitOfFunding = 10000;
+            limitOfFunding = FIRSTLIMITOFFUND;
         } else {
-            limitOfFunding = Integer.MAX_VALUE;
+            limitOfFunding = SECONDLIMITOFFUND;
         }
         return limitOfFunding;
     }
@@ -42,9 +53,9 @@ public class USBank extends Bank {
         int monthlyRate = 0;
         switch (getCurrency()) {
             case EUR:
-                monthlyRate = 2;
+                monthlyRate = FIRSTMONTHLYRATE;
             case USD:
-                monthlyRate = 1;
+                monthlyRate = SECONDMOTHLYRATE;
         }
         return monthlyRate;
     }
@@ -52,19 +63,19 @@ public class USBank extends Bank {
     public int getCommission(int summ) {
         int commision;
         if ((getCurrency() == Currency.USD) && (summ <= 1000)) {
-            commision = 5;
+            commision = FIRSTCOMISSION;
         } else if ((getCurrency() == Currency.USD) && (summ > 1000)) {
-            commision = 7;
+            commision = SECONDCOMISSION;
         } else if ((getCurrency() == Currency.EUR) && (summ <= 1000)) {
-            commision = 6;
+            commision = THIRDCOMISSION;
         } else {
-            commision = 8;
+            commision = FOURTHCOMISSION;
         }
         return commision;
     }
 
     public double moneyPaidMonthlyForSalary() {
-        return getNumberOfEmployees()*getAvrSalaryOfEmployee();
+        return getNumberOfEmployees() * getAvrSalaryOfEmployee();
     }
 
 
