@@ -13,6 +13,7 @@ public class Room {
     private String hotelName;
     private String cityName;
 
+
     public Room(long id, int price, int persons, Date dateAvailableFrom, String hotelName, String cityName) {
         this.id = id;
         this.price = price;
@@ -21,6 +22,9 @@ public class Room {
         this.hotelName = hotelName;
         this.cityName = cityName;
     }
+
+
+
 
     public long getId() {
         return id;
@@ -79,14 +83,26 @@ public class Room {
 
         if (price != room.price) return false;
         if (persons != room.persons) return false;
-        return cityName.equals(room.cityName);
+        return cityName != null ? cityName.equals(room.cityName) : room.cityName == null;
     }
 
     @Override
     public int hashCode() {
         int result = price;
         result = 31 * result + persons;
-        result = 31 * result + cityName.hashCode();
+        result = 31 * result + (cityName != null ? cityName.hashCode() : 0);
         return result;
+    }
+
+    @Override
+    public String toString() {
+        return "Room{" +
+                "id=" + id +
+                ", price=" + price +
+                ", persons=" + persons +
+                ", dateAvailableFrom=" + dateAvailableFrom +
+                ", hotelName='" + hotelName + '\'' +
+                ", cityName='" + cityName + '\'' +
+                '}';
     }
 }
