@@ -43,11 +43,10 @@ public class RoomDAOimpl implements RoomDAO {
     }
 
     public Room findById(long id) {
-        for (Room room: roomDB) {
-            if (room.getId() == id){
+        for (Room room : roomDB) {
+            if (room != null && room.getId() == id) {
                 return room;
             }
-
         }
 
         return null;

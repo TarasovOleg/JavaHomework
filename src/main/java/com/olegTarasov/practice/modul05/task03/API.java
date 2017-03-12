@@ -7,5 +7,9 @@ import com.olegTarasov.practice.modul05.task01_02.Room;
  */
 public interface API {
     public Room[] findRooms (int price, int persons, String city, String hotel);
+    public Room[] getRooms();
+
+
+
 
 }

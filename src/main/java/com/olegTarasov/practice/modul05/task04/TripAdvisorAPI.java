@@ -21,10 +21,26 @@ public class TripAdvisorAPI implements API {
     }
 
     public Room[] findRooms(int price, int persons, String city, String hotel) {
-        int identyfier = 0;
-        if ((rooms.equals(persons)) || (rooms.equals(price)) || (rooms.equals(city)) || (rooms.equals(hotel))) {
-            identyfier = rooms.hashCode();
+        Room testRoom = new Room(0, price, persons, null, city, hotel);
+        int counter = 0;
+        for (int i = 0; i < rooms.length; i++) {
+            if (testRoom.equals(rooms[i])) {
+                counter++;
+            }
         }
-        return new Room[identyfier];
+        Room[] bingoRooms = new Room[counter];
+        for (int i = 0; i < rooms.length; i++) {
+            for (int j = 0; j < bingoRooms.length; j++) {
+                if (testRoom.equals(rooms[i])) {
+                    bingoRooms[j] = rooms[i];
+                }
+            }
+        }
+        return bingoRooms;
     }
+
+    public Room[] getRooms() {
+        return rooms;
+    }
+
 }

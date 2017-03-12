@@ -10,10 +10,11 @@ import java.util.Date;
  * Created by Олег on 01.03.2017.
  */
 public class GoogleAPI implements API {
-    public Room[] rooms = new Room[5];
-    Date dateAvailableFrom = new Date();
+    Room[] rooms = new Room[5];
+
 
     public GoogleAPI() {
+        Date dateAvailableFrom = new Date();
         rooms[0] = new Room(6744, 280, 3, dateAvailableFrom, "Global", "Vizhnitsa");
         rooms[1] = new Room(1134, 240, 2, dateAvailableFrom, "Misto", "L'viv");
         rooms[2] = new Room(2333, 190, 2, dateAvailableFrom, "Global", "Vizhnitsa");
@@ -22,10 +23,26 @@ public class GoogleAPI implements API {
     }
 
     public Room[] findRooms(int price, int persons, String city, String hotel) {
-        int identyfier = 0;
-        if ((rooms.equals(price)) && (rooms.equals(persons)) && (rooms.equals(city)) && (rooms.equals(hotel))) {
-            identyfier = rooms.hashCode();
+        Room testRoom = new Room(0, price, persons, null, city, hotel);
+        int counter = 0;
+        for (int i = 0; i < rooms.length; i++) {
+            if (testRoom.equals(rooms[i])) {
+                counter++;
+            }
         }
-        return new Room[identyfier];
+        Room[] bingoRooms = new Room[counter];
+        for (int i = 0; i < rooms.length; i++) {
+            for (int j = 0; j < bingoRooms.length; j++) {
+                if (testRoom.equals(rooms[i])) {
+                    bingoRooms[j] = rooms[i];
+                }
+            }
+        }
+        return bingoRooms;
+    }
+
+    public Room[] getRooms() {
+
+        return rooms;
     }
 }

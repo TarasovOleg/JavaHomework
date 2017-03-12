@@ -12,7 +12,7 @@ import java.util.Arrays;
  * Created by Олег on 01.03.2017.
  */
 public class Controller {
-    public API[] apis = new API[3];
+    API[] apis = new API[3];
 
     public Controller() {
         apis[0] = new GoogleAPI();
@@ -21,19 +21,31 @@ public class Controller {
     }
 
     public Room[] requestRooms(int price, int persons, String city, String hotel) {
+        Room testRoom = new Room(0, price, persons, null, city, hotel);
         int bingoRoomsLength = 0;
-        Room[] bingoRooms = new Room[bingoRoomsLength];
         for (int i = 0; i < apis.length - 1; i++) {
-            if (apis[i].findRooms(price, persons, city, hotel) == requestRooms(price, persons, city, hotel)) {
+            if (apis[i].findRooms(price, persons, city, hotel).equals(testRoom)){
                 bingoRoomsLength++;
-                System.arraycopy(apis, i, bingoRooms, i, apis.length);
             }
         }
-
-        return  bingoRooms;
+        Room[] matchedRooms = new Room[bingoRoomsLength];
+        for (int i = 0; i < apis.length - 1; i++) {
+            for (int j = 0; j < matchedRooms.length; j++) {
+                if (apis[i].findRooms(price, persons, city, hotel).equals(testRoom)){
+                    System.out.println("Test");
+                    //matchedRooms[j] = apis[i].getRooms(); // error!
+                }
+            }
+        }
+        return  matchedRooms;
     }
 
-
+    @Override
+    public String toString() {
+        return "Controller{" +
+                "apis=" + Arrays.toString(apis) +
+                '}';
+    }
     //private Room[] check(API api1, API api2)
 
 
