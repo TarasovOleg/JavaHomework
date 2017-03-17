@@ -24,14 +24,14 @@ public class Controller {
         Room testRoom = new Room(0, price, persons, null, city, hotel);
         int bingoRoomsLength = 0;
         for (int i = 0; i < apis.length - 1; i++) {
-            if (apis[i].findRooms(price, persons, city, hotel).equals(testRoom)){
+            if (testRoom.equals(apis[i].findRooms(price, persons, city, hotel))){
                 bingoRoomsLength++;
             }
         }
         Room[] matchedRooms = new Room[bingoRoomsLength];
         for (int i = 0; i < apis.length - 1; i++) {
             for (int j = 0; j < matchedRooms.length; j++) {
-                if (apis[i].findRooms(price, persons, city, hotel).equals(testRoom)){
+                if (testRoom.equals(apis[i].findRooms(price, persons, city, hotel))){
                     System.out.println("Test");
                     //matchedRooms[j] = apis[i].getRooms(); // error!
                 }

@@ -7,10 +7,18 @@ import com.olegTarasov.practice.modul06.task02.User;
  */
 public class UserUtils {
     public static User[] uniqueUsers(User[] users) {
-        User[] arrayOfUniqueUsers = new User[users.length];
+        User testUser = new User(User.getId(), User.getFirstName(),User.getLastName(),User.getSalary(),User.getBalance());
+        int counter = 1;
+        for (int i = 0; i < users.length-1; i++) {
+            if (testUser.equals(new User(User.getId(),User.getFirstName(), User.getLastName(), User.getSalary(), User.getBalance()))){
+                counter++;
+            }
+        }
+        User[] arrayOfUniqueUsers = new User[counter];
+        int j = 0;
         for (int i = 0; i < users.length - 1; i++) {
-            if (users[i].equals(users[i + 1])) {
-                arrayOfUniqueUsers[i] = users[i];
+            if (testUser.equals(new User(User.getId(),User.getFirstName(), User.getLastName(), User.getSalary(), User.getBalance()))) {
+                arrayOfUniqueUsers[j++] = users[i];
             }
         }
         return arrayOfUniqueUsers;

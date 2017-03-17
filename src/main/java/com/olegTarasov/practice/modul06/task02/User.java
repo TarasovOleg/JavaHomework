@@ -5,10 +5,11 @@ package com.olegTarasov.practice.modul06.task02;
  */
 public final class User {
     public static long id;
-    public String firstName;
-    public String lastName;
-    public int salary;
-    public int balance;
+    public static String firstName;
+    public static String lastName;
+    public static int salary;
+    public static int balance;
+
 
     public User(long id, String firstName, String lastName, int salary, int balance) {
         this.id = id;
@@ -16,6 +17,22 @@ public final class User {
         this.lastName = lastName;
         this.salary = salary;
         this.balance = balance;
+    }
+
+    public static String getFirstName() {
+        return firstName;
+    }
+
+    public static String getLastName() {
+        return lastName;
+    }
+
+    public static int getSalary() {
+        return salary;
+    }
+
+    public static int getBalance() {
+        return balance;
     }
 
     public static long getId() {
