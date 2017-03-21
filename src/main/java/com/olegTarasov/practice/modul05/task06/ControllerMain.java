@@ -28,12 +28,10 @@ public class ControllerMain {
         }
 
         System.out.println(roomDAOimpl.deleted(createRoom(9933, 300, 2)));
-        //System.out.println(roomDAOimpl.toString());
         System.out.println(roomDAOimpl.update(createRoom(9933, 300, 2)).toString());
         System.out.println(roomDAOimpl.findById(8001).toString());
 
-        /*roomDAOimpl.deleted(createRoom(2, 200, 2));
-        roomDAOimpl.deleted(createRoom(5, 500, 5));*/
+
 
        /* for (int i = 0; i < 10; i++) {
             Room room = roomDAOimpl.findById(9933);
@@ -43,10 +41,6 @@ public class ControllerMain {
                 System.out.println("Room from DB: " + room.getId());
             }
         }*/
-
-
-        //System.out.println(Arrays.toString(controller.requestRooms(280, 3, "GGGG", "VVVV")));
-        //System.out.println(Arrays.toString(controller.check(googleAPI,tripAdvisorAPI)));
 
 
     }
