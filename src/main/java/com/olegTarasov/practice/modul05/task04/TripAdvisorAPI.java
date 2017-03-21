@@ -13,11 +13,11 @@ public class TripAdvisorAPI implements API {
     Date dateAvailableFrom = new Date();
 
     public TripAdvisorAPI() {
-        rooms[0] = new Room(7655, 220, 2, dateAvailableFrom, "Druzhba", "Kiyv");
-        rooms[1] = new Room(9823, 230, 2, dateAvailableFrom, "Evropa", "Kharkov");
-        rooms[2] = new Room(4511, 300, 3, dateAvailableFrom, "Druzhba", "Kiyv");
-        rooms[3] = new Room(4785, 280, 3, dateAvailableFrom, "Ukraina", "Gorlovka");
-        rooms[4] = new Room(2235, 320, 3, dateAvailableFrom, "Evropa", "Kharkov");
+        rooms[0] = new Room(7655, 220, 2, dateAvailableFrom, "GGGG", "VVVV");
+        rooms[1] = new Room(9823, 230, 2, dateAvailableFrom, "GGGG", "VVVV");
+        rooms[2] = new Room(8823, 330, 3, dateAvailableFrom, "MMMM", "LLLL");
+        rooms[3] = new Room(4785, 280, 3, dateAvailableFrom, "GGGG", "VVVV");
+        rooms[4] = new Room(1134, 240, 2, dateAvailableFrom, "MMMM", "LLLL");
     }
 
     public Room[] findRooms(int price, int persons, String city, String hotel) {

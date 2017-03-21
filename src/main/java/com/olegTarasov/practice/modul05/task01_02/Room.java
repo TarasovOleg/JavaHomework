@@ -23,8 +23,8 @@ public class Room {
         this.cityName = cityName;
     }
 
-
-
+    public Room() {
+    }
 
     public long getId() {
         return id;

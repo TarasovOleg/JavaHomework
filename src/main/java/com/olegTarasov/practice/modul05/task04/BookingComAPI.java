@@ -13,11 +13,11 @@ public class BookingComAPI implements API {
     Date dateAvailableFrom = new Date();
 
     public BookingComAPI() {
-        rooms[0] = new Room(5345, 420, 4, dateAvailableFrom, "Privat", "Odessa");
-        rooms[1] = new Room(9933, 300, 2, dateAvailableFrom, "Privat", "Odessa");
-        rooms[2] = new Room(3434, 330, 3, dateAvailableFrom, "Lukomorye", "Odessa");
-        rooms[3] = new Room(6655, 250, 2, dateAvailableFrom, "Lukomorye", "Odessa");
-        rooms[4] = new Room(8001, 400, 4, dateAvailableFrom, "Lukomorye", "Odessa");
+        rooms[0] = new Room(5345, 420, 4, dateAvailableFrom, "PPPP", "OOOO");
+        rooms[1] = new Room(9933, 300, 2, dateAvailableFrom, "PPPP", "OOOO");
+        rooms[2] = new Room(3434, 330, 3, dateAvailableFrom, "LLLL", "OOOO");
+        rooms[3] = new Room(6655, 250, 2, dateAvailableFrom, "GGGG", "VVVV");
+        rooms[4] = new Room(8001, 400, 4, dateAvailableFrom, "GGGG", "VVVV");
     }
 
     public Room[] findRooms(int price, int persons, String city, String hotel) {

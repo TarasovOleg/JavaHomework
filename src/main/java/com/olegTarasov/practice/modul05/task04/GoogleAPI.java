@@ -15,11 +15,11 @@ public class GoogleAPI implements API {
 
     public GoogleAPI() {
         Date dateAvailableFrom = new Date();
-        rooms[0] = new Room(6744, 280, 3, dateAvailableFrom, "Global", "Vizhnitsa");
-        rooms[1] = new Room(1134, 240, 2, dateAvailableFrom, "Misto", "L'viv");
-        rooms[2] = new Room(2333, 190, 2, dateAvailableFrom, "Global", "Vizhnitsa");
-        rooms[3] = new Room(8823, 330, 3, dateAvailableFrom, "Misto", "L'viv");
-        rooms[4] = new Room(6006, 280, 2, dateAvailableFrom, "Terminal", "Brovary");
+        rooms[0] = new Room(6744, 280, 3, dateAvailableFrom, "GGGG", "VVVV");
+        rooms[1] = new Room(1134, 240, 2, dateAvailableFrom, "MMMM", "LLLL");
+        rooms[2] = new Room(2333, 190, 2, dateAvailableFrom, "GGGG", "VVVV");
+        rooms[3] = new Room(8823, 330, 3, dateAvailableFrom, "MMMM", "LLLL");
+        rooms[4] = new Room(6006, 280, 2, dateAvailableFrom, "MMMM", "LLLL");
     }
 
     public Room[] findRooms(int price, int persons, String city, String hotel) {

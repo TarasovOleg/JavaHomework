@@ -140,7 +140,7 @@ public final class ArraysUtils {
 
     public static int[] findEvenElements(int[] array) {
         int counter = 1;
-        for (int i = 0; i < array.length - 1; i++) {
+        for (int i = 0; i < array.length; i++) {
             if (((array[i] % 2) == 0) && (array[i] != 0)) {
                 counter++;
             }
