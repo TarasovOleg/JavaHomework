@@ -12,8 +12,8 @@ import java.util.Arrays;
  * Created by Олег on 01.03.2017.
  */
 public class Controller {
-    protected final int DEFAULTAPILENGTH = 5;
-    API[] apis = new API[3];
+    public static final int DEFAULTAPILENGTH = 5;
+    private API[] apis = new API[3];
 
     public Controller() {
         apis[0] = new GoogleAPI();

@@ -7,7 +7,7 @@ import java.util.Arrays;
 /**
  * Created by Олег on 07.03.2017.
  */
-public class UsersMain{
+public class UsersMain {
     public static void main(String[] args) {
         User [] usersArray = new User[6];
         UserUtils userUtils = new UserUtils();
