@@ -32,6 +32,7 @@ public class ControllerMain {
         System.out.println(roomDAOimpl.findById(8001).toString());
 
 
+        System.out.println(controller.requestRooms(400, 4, "GGGG", "VVVV").toString());
 
        /* for (int i = 0; i < 10; i++) {
             Room room = roomDAOimpl.findById(9933);

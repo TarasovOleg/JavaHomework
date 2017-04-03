@@ -21,11 +21,10 @@ public class Controller {
         apis[2] = new BookingComAPI();
     }
 
-    public Room[] requestRooms(int price, int persons, String city, String hotel) {
+    public  Room[] requestRooms(int price, int persons, String city, String hotel) {
         int matchedRoomsLength = 0;
         for (API api : apis) {
             matchedRoomsLength += api.findRooms(price, persons, city, hotel).length;
-
         }
         Room[] matchedRooms = new Room[matchedRoomsLength];
         Room[] requestRooms_1 = apis[0].findRooms(price, persons, city, hotel);

@@ -33,7 +33,7 @@ public class TreeSetMain {
         orderList.add(7, new Order(777, 160, Order.Currency.USD, "uuuu", "shop777", userList.get(7)));
         orderList.add(8, new Order(888, 170, Order.Currency.USD, "iiii", "shop666", userList.get(8)));
         orderList.add(9, new Order(444, 120, Order.Currency.GRN, "oooo", "shop666", userList.get(9)));
-        Set<Order> orderSet = new TreeSet<Order>();
+        TreeSet<Order> orderSet = new TreeSet<Order>();
         orderSet.addAll(orderList);
 
 
@@ -42,26 +42,32 @@ public class TreeSetMain {
         }
         System.out.println('\n');
 
+        //***************
+
         for (Order order : orderSet) {
             int checker = order.getUser().getLastName().compareTo("Petrov");
-            if (checker == 0){
+            if (checker == 0) {
                 System.out.println(order);
             }
         }
         System.out.println('\n');
 
+        //***************
+
+        System.out.println(orderSet.last());
+        System.out.println('\n');
 
 
-
-
+        //****************
 
         Iterator<Order> iterator = orderSet.iterator();
-        int curencyChecker = iterator.next().getCurrency().compareTo(Order.Currency.USD);
-//        if (curencyChecker == 0)
-        while (iterator.hasNext() && curencyChecker == 0){
-            orderSet.remove(iterator.next());
+        while (iterator.hasNext()) {
+            Order tmp = iterator.next();
+            if (tmp.getCurrency() == Order.Currency.USD) {
+                iterator.remove();
+            }
         }
-        for (Order order : orderList) {
+        for (Order order : orderSet) {
             System.out.println(order);
         }
     }
