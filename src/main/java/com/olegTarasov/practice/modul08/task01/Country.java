@@ -5,4 +5,5 @@ package com.olegTarasov.practice.modul08.task01;
  */
 public enum Country {
     UKRAINE, POLAND, HOLLAND, CHINA, GREESE;
+
 }

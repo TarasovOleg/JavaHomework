@@ -66,16 +66,16 @@ public class OrderSortMethods {
         int newListCounter = 0;
         int uniqueNameChecker = 0;
         for (int i = 0; i < orderList.size(); i++) {
-            int checkUniqueCity = orderList.get(uniqueNameChecker++).getUser().getCity().compareTo(orderList.get(i).getUser().getCity());
+           // int checkUniqueCity = orderList.get(uniqueNameChecker++).getUser().getCity().compareTo(orderList.get(i).getUser().getCity());
             System.out.println("test sout");
-            if (checkUniqueCity != 0) {
+            if (!orderList.get(uniqueNameChecker++).getUser().getCity().equals(orderList.get(i).getUser().getCity())) {
                 newListCounter++;
             }
         }
         List<List<Order>> listsOfLists = listCreator(newListCounter);
         for (int i = 0; i < orderList.size(); i++) {
-            int checkUniqueCity = orderList.get(i).getUser().getCity().compareTo(orderList.get(i).getUser().getCity());
-            if (checkUniqueCity != 0) {
+           // int checkUniqueCity = orderList.get(i).getUser().getCity().compareTo(orderList.get(i).getUser().getCity());
+            if (!orderList.get(uniqueNameChecker++).getUser().getCity().equals(orderList.get(i).getUser().getCity())) {
                 listsOfLists.get(i).add(orderList.get(i));
             }
         }

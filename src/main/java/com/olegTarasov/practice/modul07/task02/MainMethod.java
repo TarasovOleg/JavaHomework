@@ -35,32 +35,24 @@ public class MainMethod {
         orderList.add(9, new Order(444, 120, Order.Currency.GRN, "oooo", "shop666", userList.get(9)));
 
 
-        /*
         Collections.sort(orderList);
         Collections.sort(orderList,new Order.SortByIncrasePriceAndCity());
         Collections.sort(orderList, new Order.SortByItemnameShopAndSity());
-        */
 
 
-        /*System.out.println(" ");
+        System.out.println(" ");
         for (Order anOrderList : orderList) {
             System.out.println(anOrderList);
         }
-        */
 
-        //orderSortMethods.currencyDividerMethod(orderList);
-        //orderSortMethods.orderDuplicatesRemover(orderList);
-        //orderSortMethods.priceLessThen150Remover(orderList);
-        orderSortMethods.cityNameDividerMethod(orderList);
+        orderSortMethods.currencyDividerMethod(orderList);
+        orderSortMethods.orderDuplicatesRemover(orderList);
+        orderSortMethods.priceLessThen150Remover(orderList);
+        //orderSortMethods.cityNameDividerMethod(orderList); //метод не работает. поскольку задание дополнительное - решил отложить его на позже
 
 
-        /*for (Order anOrderList : orderList) {
+        for (Order anOrderList : orderList) {
             System.out.println(anOrderList);
-        }*/
-
-
-
+        }
     }
-
-
 }
