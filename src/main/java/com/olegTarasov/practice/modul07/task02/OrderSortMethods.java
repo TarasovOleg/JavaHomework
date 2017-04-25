@@ -18,22 +18,22 @@ public class OrderSortMethods {
 
 
     public void currencyDividerMethod(List<Order> orderList) {
-        List<Order> faterlandList = new ArrayList<Order>();
-        List<Order> foreignList = new ArrayList<Order>();
+        List<Order> grnList = new ArrayList<Order>();
+        List<Order> usdList = new ArrayList<Order>();
         for (int i = 0; i < orderList.size(); i++) {
 
             String checker = orderList.get(i).getCurrency().toString();
             if (checker == "GRN") {
-                faterlandList.add(orderList.get(i));
+                grnList.add(orderList.get(i));
             } else if (checker == "USD") {
-                foreignList.add(orderList.get(i));
+                usdList.add(orderList.get(i));
             }
         }
-        for (Order order : faterlandList) {
+        for (Order order : grnList) {
             System.out.println(order);
         }
         System.out.println(" ");
-        for (Order order : foreignList) {
+        for (Order order : usdList) {
             System.out.println(order);
         }
     }

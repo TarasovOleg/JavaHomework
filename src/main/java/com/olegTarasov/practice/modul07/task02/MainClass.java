@@ -8,7 +8,7 @@ import java.util.*;
 /**
  * Created by Олег on 22.03.2017.
  */
-public class MainMethod {
+public class MainClass {
     public static void main(String[] args) {
         OrderSortMethods orderSortMethods = new OrderSortMethods();
         List<User> userList = new ArrayList<User>();
